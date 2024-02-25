@@ -56,3 +56,8 @@ $(BUILD_DIR)/src/audio/%.marker: OPTFLAGS := -O3
 $(BUILD_DIR)/src/rg/%.marker: OPTFLAGS := -O3
 $(BUILD_DIR)/src/gt/%.marker: OPTFLAGS := -O3
 endif
+
+ifneq ($(filter $(VERSION), H),)
+$(BUILD_DIR)/src/io/sptask.marker: OPTFLAGS := -O2
+$(BUILD_DIR)/src/gu/us2dex_emu.marker: OPTFLAGS := -O2
+endif

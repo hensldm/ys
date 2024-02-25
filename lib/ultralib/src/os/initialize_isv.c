@@ -112,8 +112,8 @@ int __checkHardware_isv(void) {
         osEPiReadIo(hnd, 0xB0000100 + i * 4, &save[i]);
     }
 
-#ifndef __GNU__ // BUG: data is used uninitialized for GCC
-    data = 0;
+#ifdef __sgi
+    data = 0; //! @bug: data is used uninitialized for GCC
 #endif
     osEPiWriteIo(hnd, 0xB000010C, data);
     data = IS64_MAGIC;

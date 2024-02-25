@@ -64,8 +64,7 @@ BASEROM_DIR := baseroms/$(VERSION)
 BASEROM     := $(BASEROM_DIR)/baserom.z64
 TARGET      := yoshisstory
 
-# TODO: ULTRALIB_VERSION should be H
-ULTRALIB_VERSION     := I
+ULTRALIB_VERSION     := H
 ULTRALIB_TARGET      := libultra_rom
 
 ### Output ###

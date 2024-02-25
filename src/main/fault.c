@@ -359,9 +359,6 @@ OSThread* FindFaultedThread(void) {
     return NULL;
 }
 
-//! TODO: Old libultra header should use this as OS_CYCLES_TO_USEC?
-#define OS_CYCLES_TO_USEC_ALT(c) (((u64)(c) * (1000000LL / 15625LL)) / (osClockRate / 15625LL))
-
 void Fault_WaitButtonCombo(void) {
     Input* input = &sFaultInputs[0];
     s32 trigger;
@@ -497,7 +494,7 @@ void Fault_WaitButtonCombo(void) {
 
                 case 10:
                     if ((button == (A_BUTTON | B_BUTTON | START_BUTTON)) && (trigger == START_BUTTON)) {
-                        f32 inputTime = OS_CYCLES_TO_USEC_ALT(osGetTime() - start) / 1000000.0f;
+                        f32 inputTime = OS_CYCLES_TO_USEC(osGetTime() - start) / 1000000.0f;
 
                         // Input time seconds
                         osSyncPrintf("入力時間 %f 秒\n", inputTime);

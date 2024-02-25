@@ -13,9 +13,6 @@ static u16 sMaxBlocks[] = { 0, EEPROM_MAXBLOCKS, EEP16K_MAXBLOCKS };
 #define EEP_READ_MSG 8
 #define EEP_WRITE_MSG 9
 
-//! TODO: Probably a libultra macro
-#define OS_CYCLES_TO_USEC_ALT(c) (((u64)(c) * (1000000LL / 15625LL)) / (osClockRate / 15625LL))
-
 void func_8007CDA0(EepMgr* eepmgr) {
     eepmgr->unk044 = func_800744B0(eepmgr->unk218);
 }
@@ -43,7 +40,7 @@ void eepmgr_Probe(EepMgr* eepmgr) {
     if (gEepmgrLogSeverity >= 3) {
         // osEepromProbe execution time=%d us
         (void)"osEepromProbe 実行時間=%d us\n";
-        (void)OS_CYCLES_TO_USEC_ALT(after - before);
+        (void)OS_CYCLES_TO_USEC(after - before);
     }
     if (type == 0) {
         if (gEepmgrLogSeverity != 0) {
@@ -97,7 +94,7 @@ s32 eepmgr_Read(EepMgr* eepmgr, u8 addr, void* buffer) {
     if (gEepmgrLogSeverity >= 2) {
         // osEepromRead execution time=%d us
         (void)"osEepromRead 実行時間=%d us\n";
-        (void)OS_CYCLES_TO_USEC_ALT(after - before);
+        (void)OS_CYCLES_TO_USEC(after - before);
     }
 
     if (status != 0) {
@@ -131,7 +128,7 @@ s32 eepmgr_Write(EepMgr* eepmgr, u8 addr, void* buffer) {
     if (gEepmgrLogSeverity >= 2) {
         // osEepromWrite execution time=%d us
         (void)"osEepromWrite 実行時間=%d us\n";
-        (void)OS_CYCLES_TO_USEC_ALT(after - before);
+        (void)OS_CYCLES_TO_USEC(after - before);
     }
 
     if (status != 0) {

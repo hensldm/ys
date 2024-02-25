@@ -103,7 +103,6 @@
       - [0x82D40, c, O2/aprintf]
       - [0x82DA0, c, O2/sleep]
 
-      # TODO: use commented out lib ones when possible
       # Libultra
       - [0x82E10, lib, libultra/libultra, sendmesg]
       - [0x82F60, lib, libultra/libultra, pfsfreeblocks]
@@ -112,17 +111,17 @@
       - [0x83290, lib, libultra/libultra, scale]
       - [0x83330, lib, libultra/libultra, sinf]
       - [0x834F0, lib, libultra/libultra, sins]
-      - [0x83560, asm, ../lib/ultralib/src/io/sptask] # [0x83560, lib, libultra/libultra, sptask]
+      - [0x83560, lib, libultra/libultra, sptask]
       - [0x83820, lib, libultra/libultra, ll]
-      - [0x83AE0, asm, ../lib/ultralib/src/gu/us2dex_emu] # [0x83AE0, lib, libultra/libultra, us2dex_emu]
+      - [0x83AE0, lib, libultra/libultra, us2dex_emu]
       - [0x849D0, lib, libultra/libultra, exceptasm]
       - [0x852E0, lib, libultra/libultra, thread]
-      - [0x85320, asm, ../lib/ultralib/src/os/destroythread] # [0x85320, lib, libultra/libultra, destroythread]
+      - [0x85320, lib, libultra/libultra, destroythread]
       - [0x85420, lib, libultra/libultra, bzero]
       - [0x854C0, lib, libultra/libultra, leointerrupt]
-      - [0x85D40, asm, ../lib/ultralib/src/io/controller] # [0x85D40, lib, libultra/libultra, controller]
+      - [0x85D40, lib, libultra/libultra, controller]
       - [0x86100, lib, libultra/libultra, siacs]
-      - [0x861C0, asm, ../lib/ultralib/src/io/conteepwrite] # [0x861C0, lib, libultra/libultra, conteepwrite]
+      - [0x861C0, lib, libultra/libultra, conteepwrite]
       - [0x86710, lib, libultra/libultra, createthread]
       - [0x86860, lib, libultra/libultra, contreaddata]
       - [0x86A80, lib, libultra/libultra, driverominit]
@@ -140,8 +139,8 @@
       - [0x87410, lib, libultra/libultra, sirawread]
       - [0x87460, lib, libultra/libultra, sptaskyield]
       - [0x87480, lib, libultra/libultra, getthreadid]
-      - [0x874A0, asm, ../lib/ultralib/src/io/pfsreadwritefile] # [0x874A0, lib, libultra/libultra, pfsreadwritefile]
-      - [0x879A0, asm, ../lib/ultralib/src/gu/mtxutil] # [0x879A0, lib, libultra/libultra, mtxutil]
+      - [0x874A0, lib, libultra/libultra, pfsreadwritefile]
+      - [0x879A0, lib, libultra/libultra, mtxutil]
       - [0x87C10, lib, libultra/libultra, visetmode]
       - [0x87C80, lib, libultra/libultra, lookat]
       - [0x87FB0, lib, libultra/libultra, motor]
@@ -233,7 +232,7 @@
       - [0x91A10, pad]
       - [0x91A20, lib, libultra/libultra, vimgr]
       - [0x91D80, lib, libultra/libultra, vigetcurrcontext]
-      - [0x91D90, asm, ../lib/ultralib/src/io/conteepread] # [0x91D90, lib, libultra/libultra, conteepread]
+      - [0x91D90, lib, libultra/libultra, conteepread]
       - [0x920F0, lib, libultra/libultra, vigetcurrframebuf]
       - [0x92130, lib, libultra/libultra, spsetpc]
 
@@ -258,10 +257,10 @@
 
       # Libultra
       - [0xAAFB0, lib, libultra/libultra, sins, .data]
-      - [0xAB7B0, data, ../lib/ultralib/src/gu/us2dex_emu] # [0xAB7B0, lib, libultra/libultra, us2dex_emu, .data]
+      - [0xAB7B0, lib, libultra/libultra, us2dex_emu, .data]
       - [0xAB7E0, lib, libultra/libultra, exceptasm, .data]
       - [0xAB800, lib, libultra/libultra, thread, .data]
-      - [0xAB820, data, ../lib/ultralib/src/io/controller] # [0xAB820, lib, libultra/libultra, controller, .data]
+      - [0xAB820, lib, libultra/libultra, controller, .data]
       - [0xAB830, lib, libultra/libultra, siacs, .data]
       - [0xAB840, lib, libultra/libultra, initialize, .data]
       - [0xAB860, lib, libultra/libultra, vitbl, .data]
@@ -390,10 +389,10 @@
       - {type: .bss, vram: 0x8010ED90, name: 7EFD0}
 
       # Libultra
-      - {type: bss, vram: 0x8010F0C0, name: ../lib/ultralib/src/io/sptask} # {type: lib, vram: 0x8010F0C0, name: libultra/libultra, object: sptask, section: .bss}
-      - {type: bss, vram: 0x8010F100, name: ../lib/ultralib/src/gu/us2dex_emu} # {type: lib, vram: 0x8010F100, name: libultra/libultra, object: us2dex_emu, section: .bss}
+      - {type: lib, vram: 0x8010F0C0, name: libultra/libultra, object: sptask, section: .bss}
+      - {type: lib, vram: 0x8010F100, name: libultra/libultra, object: us2dex_emu, section: .bss}
       - {type: lib, vram: 0x8010F120, name: libultra/libultra, object: leointerrupt, section: .bss}
-      - {type: bss, vram: 0x80110120, name: ../lib/ultralib/src/io/controller} # {type: lib, vram: 0x80110120, name: libultra/libultra, object: controller, section: .bss}
+      - {type: lib, vram: 0x80110120, name: libultra/libultra, object: controller, section: .bss}
       - {type: lib, vram: 0x801101B0, name: libultra/libultra, object: siacs, section: .bss}
       - {type: lib, vram: 0x801101D0, name: libultra/libultra, object: driverominit, section: .bss}
       - {type: lib, vram: 0x80110250, name: libultra/libultra, object: initialize, section: .bss}
@@ -407,4 +406,4 @@
       - {type: lib, vram: 0x801119C0, name: libultra/libultra, object: timerintr, section: .bss}
       - {type: lib, vram: 0x80111A00, name: libultra/libultra, object: pfsisplug, section: .bss}
       - {type: lib, vram: 0x80111A40, name: libultra/libultra, object: vimgr, section: .bss}
-      - {type: bss, vram: 0x80112C60, name: ../lib/ultralib/src/io/conteepread} # {type: lib, vram: 0x80112C60, name: libultra/libultra, object: conteepread, section: .bss}
+      - {type: lib, vram: 0x80112C60, name: libultra/libultra, object: conteepread, section: .bss}
